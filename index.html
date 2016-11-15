@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type='text/javascript' src='https://www.gstatic.com/charts/loader.js'></script>
+    <script type='text/javascript'>  
+        google.charts.load('upcoming', {'packages': ['geochart']});
+        google.charts.setOnLoadCallback(drawMarkersMap);
+        var date;
+        function drawMarkersMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Country', 'Marker', {role: 'tooltip', p:{html:true}}],
+                ['Sydney, NSW, Australia', 1, '<b>Username: </b> John Smith<br><b>Time: </b> Sat Nov 12 2016 18:40:39 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 1.2.3.4<br><b>Method: </b> Cisco VPN'],
+                ['LA, California, US', 1, '<b>Username: </b> Darin Horta<br><b>Time: </b> Mon Nov 14 2016 09:05:01 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 8.8.8.8<br><b>Method: </b> Salesforce'],
+                ['New York, New York, US', 1, '<b>Username: </b> Lucius Kimbrel<br><b>Time: </b> Mon Nov 14 2016 07:02:03 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 4.4.2.2<br><b>Method: </b> Fortinet VPN'],
+                ['Rio de Janeiro, Brazil', 1, '<b>Username: </b> Scottie Danziger<br><b>Time: </b> Fri Nov 11 2016 18:40:39 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 208.62.21.54<br><b>Method: </b> AWS'],
+                ['London, England, UK', 1, '<b>Username: </b> Lupita Hammack<br><b>Time: </b> Sun Nov 13 2016 12:20:19 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 96.45.51.8<br><b>Method: </b> Palo Alto VPN'],
+                ['Milan, Lombardy, Italy', 1, '<b>Username: </b> Lamont Furr<br><b>Time: </b> Sat Nov 12 2016 21:45:46 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 63.5.8.9<br><b>Method: </b> Webex'],
+                ['Perth, WA, Australia', 1, '<b>Username: </b> Aundrea Sargeant<br><b>Time: </b> Sat Nov 12 2016 05:40:23 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 12.22.125.154<br><b>Method: </b> Windows Login'],
+                ['Sydney, NSW, Australia', 1, '<b>Username: </b> Antonia Correa<br><b>Time: </b> Thu Nov 10 2016 13:07:53 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 196.5.6.8<br><b>Method: </b> Citrix'],
+                ['Shanghai, China', 1, '<b>Username: </b> Reita Vandorn<br><b>Time: </b> Mon Nov 14 2016 12:04:53 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 29.6.51.195<br><b>Method: </b> VMWare'],
+                ['Christchurch, New Zealand', 1, '<b>Username: </b> Lorelei Woodbury<br><b>Time: </b> Sat Nov 12 2016 18:40:39 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 88.5.45.123<br><b>Method: </b> Juniper Pulse VPN'],
+                ['Madrid, Spain', 1, '<b>Username: </b> Wilhemina Peirce<br><b>Time: </b> Sat Nov 12 2016 18:40:39 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 1.2.3.4<br><b>Method: </b> Cisco VPN'],
+                ['Stockholm, Sweden', 1, '<b>Username: </b> Jerome Nagao<br><b>Time: </b> Sun Nov 13 2016 19:47:12 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 1.2.3.4<br><b>Method: </b> Cisco VPN'],
+                ['Cape Town, South Africa', 1, '<b>Username: </b> Kandis Kozak<br><b>Time: </b> Fri Nov 11 2016 23:44:23 GMT-0800 (Pacific Standard Time)<br><b>IP: </b> 1.2.3.4<br><b>Method: </b> Cisco VPN']          
+            ]);
+
+            var chart = new google.visualization.GeoChart(document.getElementById('chart_div'));
+            chart.draw(data, {
+                displayMode: 'markers',
+                legend: 'none',
+                colorAxis: {colors: ['#e7711c', '#4374e0']},
+                tooltip: {isHtml: true}
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <div id="chart_div"></div>
+</body>
+
+</html>
